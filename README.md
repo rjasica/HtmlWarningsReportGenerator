@@ -1,4 +1,7 @@
 HtmlWarningsReportGenerator
 ===========================
 
-Comand line tool generating from xml html report displaying warnings and errors.
+Comand line tool generating html report from xml. It render warnings, errors and adnotations in source code. It can be easy integrated with continous integration servers and reports can be published as artifacts.
+
+
+
