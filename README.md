@@ -5,11 +5,11 @@ Comand line tool generating html report from xml. It render warnings, errors and
 
 ## Nuget 
 
-Nuget package http://nuget.org/packages/Kobush.Build/
+Nuget package http://nuget.org/packages/HtmlWarningsReportGenerator/
 
 To Install from the Nuget Package Manager Console 
     
-    PM> Install-Package Kobush.Build
+    PM> Install-Package HtmlWarningsReportGenerator
 
 ## Sample output
 
