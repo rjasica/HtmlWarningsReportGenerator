@@ -1,0 +1,21 @@
+ul .heading {font-weight: normal; list-style: none; margin-left: -20px;}
+
+tr.none td.colormargin { background-color: #dcdcdc;}
+.annotationdiv { border:2px solid; padding:10px 10px; }
+
+html { font-family: sans-serif; margin: 20px; font-size: 0.9em; background-color: #f5f5f5; }
+h1 { font-size: 1.2em; font-weight: bold; margin: 20px 0 15px 0; padding: 0; }
+a { color: #cc0000; text-decoration: none; }
+a:hover { color: #000000; text-decoration: none; }
+
+.container { margin: auto; max-width: 1200px; width: 90%; border: solid 1px #a7bac5; padding: 0 20px 20px 20px; background-color: #ffffff; }
+.footer { font-size: 0.7em; text-align: center; margin-top: 35px; }
+
+th { text-align: left; }
+.overview { border: solid 1px #a7bac5; border-collapse: collapse; width: 100%; word-wrap: break-word; table-layout:fixed; }
+.overview th { border: solid 1px #a7bac5; border-collapse: collapse; padding: 2px 5px 2px 5px; background-color: #d2dbe1; }
+.overview thead th { background-color: #c4ced4; }
+.overview td { border: solid 1px #a7bac5; border-collapse: collapse; padding: 2px 5px 2px 5px; }
+.right { text-align: right; }
+.rightmargin  { padding-right: 8px; }
+.leftmargin { padding-left: 5px; }
