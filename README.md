@@ -33,11 +33,11 @@ Sample
     
 Help
 
-  -f, --files      Required. Files to parse.
-  -t, --type       (Default: html) Output report type.
-  -o, --outdir     Required. Output directory..
-  -v, --verbose    Display information messages.
-  --help           Display this help screen.
+    -f, --files      Required. Files to parse.
+    -t, --type       (Default: html) Output report type.
+    -o, --outdir     Required. Output directory..
+    -v, --verbose    Display information messages.
+    --help           Display this help screen.
 
 ## Converting MSbuild report with Style and Code Analysis
 
