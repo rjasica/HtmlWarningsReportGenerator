@@ -122,14 +122,13 @@ namespace HWRG.Processor.Html
         {
             sw.WriteLine("<colgroup>");
             sw.WriteLine("<col />");
-            sw.WriteLine("<col width='110' />");
             foreach (var typeDefinition in types)
             {
                 sw.WriteLine("<col width='110' />");
             }
             if (types.Length != 1)
             {
-                sw.WriteLine("</colgroup>");
+                sw.WriteLine("<col width='110' />");
             }
 
             sw.Write("<thead><tr><th>File Name</th>");
@@ -138,8 +137,10 @@ namespace HWRG.Processor.Html
             {
                 sw.Write("<th>{0}</th>", WebUtility.HtmlEncode(typeDefinition.Display));
             }
-
-            sw.WriteLine("<th>Total</th>");
+            if (types.Length != 1)
+            {
+                sw.WriteLine("<th>Total</th>");
+            }
         }
     }
 }

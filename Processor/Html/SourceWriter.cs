@@ -61,7 +61,7 @@ namespace HWRG.Processor.Html
             catch (Exception ex)
             {
                 Log.ErrorFormat("File read error {0}: {1}", file.Name, ex.Message);
-                sw.WriteLine("<div><code>File read error {0}</code></div>", WebUtility.HtmlEncode(ex.Message));
+                sw.WriteLine("<div><div class='code'>File read error {0}</div></div>", WebUtility.HtmlEncode(ex.Message));
             }
 
             List<LineAnnotation> endAnnotations;
@@ -95,13 +95,13 @@ namespace HWRG.Processor.Html
         private void WriteSourceLine(StreamWriter sw, Line line)
         {
             sw.WriteLine("<tr class='{0}' id='line{1}'><td class='colormargin'>&nbsp;</td>" +
-                         "<td class='leftmargin rightmargin right'><code>{3}</code></td>" +
-                         "<td class='rightmargin right'><code>{1}</code></td>" +
-                         "<td class='codecolor'><code>{2}</code></td></tr>", 
+                         "<td class='leftmargin rightmargin right'><div class='code'>{3}</code></td>" +
+                         "<td class='rightmargin right'><div class='code'>{1}</dic></td>" +
+                         "<td class='codecolor'><div class='code'>{2}</div></td></tr>", 
                          line.Markers != null && line.Markers.Count != 0 ? string.Join(" ", line.Markers) : "none", 
                          line.Number,
-                         WebUtility.HtmlEncode(line.Source).Replace(" ", "&nbsp;"), 
-                         line.LineAnnotations.Count != 0 ? line.LineAnnotations.Count.ToString() : "");
+                         WebUtility.HtmlEncode(line.Source), 
+                         line.Count != 0 ? line.Count.ToString() : "");
 
             foreach (var annotation in line.LineAnnotations)
             {
@@ -154,7 +154,7 @@ namespace HWRG.Processor.Html
         private void WriteAnnotationDiv(StreamWriter sw, LineAnnotation annotation)
         {
             sw.WriteLine(
-                "<tr><td colspan='3'>&nbsp;</td><td><div class='annotationdiv {0}'><code>{1}<br/>{2}</code>",
+                "<tr><td colspan='3'>&nbsp;</td><td><div class='annotationdiv {0}'><div class='code'>{1}<br/>{2}</div>",
                 annotation.Type,
                 annotation.Category,
                 WebUtility.HtmlEncode(annotation.Message));
@@ -186,12 +186,12 @@ namespace HWRG.Processor.Html
                     sw.WriteLine("<div class='annotationdiv {0}'><table class='lineAnalysis'><tbody>", annotation.Type);
 
                     var size = reference.Size > 0 ? reference.Size : 1;
-                    for(var i = reference.Line; i < reference.Line + size; i++)
+                    for(var i = reference.Line; (i < reference.Line + size) && i-1 < lines.Length && i >= 1; i++)
                     {
                         sw.WriteLine(
-                            "<tr><td class='rightmargin right'><code>{0}</code></td><td><code>{1}</code></td></tr>", 
-                            i+1,
-                            WebUtility.HtmlEncode(lines[i]).Replace(" ", "&nbsp;"));
+                            "<tr><td class='rightmargin right'><div class='code'>{0}</div></td><td><code>{1}</code></td></tr>", 
+                            i,
+                            WebUtility.HtmlEncode(lines[i-1]).Replace(" ", "&nbsp;"));
                     }
                     sw.WriteLine("</tbody></table></div>");
                     sw.WriteLine("</li>");
