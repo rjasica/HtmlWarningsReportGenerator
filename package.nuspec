@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>HtmlWarningsReportGenerator</id>
-        <version>1.0.4.0</version>
+        <version>1.0.5.0</version>
         <authors>Rafał Jasica</authors>
         <owners>Rafał Jasica</owners>
-        <licenseUrl>https://raw.github.com/rjasica/Hwrg/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/rjasica/Hwrg</projectUrl>
-        <iconUrl>https://raw.github.com/rjasica/Hwrg/master/package_icon.png</iconUrl>
+        <licenseUrl>https://raw.github.com/rjasica/HtmlWarningsReportGenerator/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/rjasica/HtmlWarningsReportGenerator</projectUrl>
+        <iconUrl>https://raw.github.com/rjasica/HtmlWarningsReportGenerator/master/package_icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Comand line tool generating html report from xml. It render warnings, errors and adnotations in source code. It can be easy integrated with continous integration servers and reports can be published as artifacts.</description>
         <tags>msbuild stylecop codealysis reshaper codeinspect dupfinder html generator</tags>

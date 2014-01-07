@@ -15,6 +15,8 @@ namespace HWRG.Processor.Html
     {
         private readonly static ILog Log = LogManager.GetCurrentClassLogger();
 
+        private readonly Regex trimSpaces = new Regex( @"(?<=^\s*)\s", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
         public string Write(string outputDir, File file, TypeDefinition[] types)
         {
             var filename = GetFileName(file.Name) + ".html";
@@ -100,7 +102,7 @@ namespace HWRG.Processor.Html
                          "<td class='codecolor'><div class='code'>{2}</div></td></tr>", 
                          line.Markers != null && line.Markers.Count != 0 ? string.Join(" ", line.Markers) : "none", 
                          line.Number,
-                         WebUtility.HtmlEncode(line.Source), 
+                         trimSpaces.Replace( WebUtility.HtmlEncode( line.Source ), "&nbsp;" ), 
                          line.Count != 0 ? line.Count.ToString() : "");
 
             foreach (var annotation in line.LineAnnotations)
